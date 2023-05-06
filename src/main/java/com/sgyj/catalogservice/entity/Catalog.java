@@ -26,4 +26,8 @@ public class Catalog implements Serializable {
     @Column(nullable = false, updatable = false, insertable = false)
     @ColumnDefault( value="CURRENT_TIMESTAMP" )
     private LocalDateTime createdAt;
+
+    public void minusStockByQty(int qty) {
+        this.stock -= qty;
+    }
 }
